@@ -15,11 +15,15 @@ const userSchema = new mongoose.Schema({
     unique: true,
     validate: [validator.isEmail, "please enter a valid email"],
   },
+  phone: {
+    type: Number,
+    required: [true, "please enter phoneNumber"],
+  },
   password: {
     type: String,
     required: [true, "please enter password"],
     minLength: [8, "password more than 8 char"],
-    select: false,
+    // select: false,
   },
   avatar: {
     public_id: {
